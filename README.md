@@ -1,7 +1,5 @@
 <h1>Neon Effect Buttons created purely using HTML &amp; CSS</h1>
 
-<h1>A Circular Loading Spinner created purely using HTML &amp; CSS</h1>
-
 <p>
     <a href="#" target="_blank" title="Watch The Video">YouTube Video</a>
 </p>
