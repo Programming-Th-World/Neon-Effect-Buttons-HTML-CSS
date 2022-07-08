@@ -1,0 +1,21 @@
+/* Global Reset & Variables */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  /* Variables: */
+  --bg: hsl(290, 30%, 15%);
+  --white: #fff;
+  --black: #333;
+
+  --neon-1: hsl(134, 100%, 60%);
+  --neon-2: hsl(208, 83%, 50%);
+  --neon-3: hsl(350, 100%, 55%);
+}
