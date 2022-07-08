@@ -19,3 +19,182 @@ body {
   --neon-2: hsl(208, 83%, 50%);
   --neon-3: hsl(350, 100%, 55%);
 }
+
+/* Body */
+body {
+  min-height: 100vh;
+
+  display: grid;
+  place-items: center;
+
+  background-color: var(--bg);
+  color: var(--white);
+  font-size: 1.125rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+/* Actions */
+.actions {
+  width: 70vw;
+  height: 100%;
+  padding: 5em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Common Button Styling */
+.btn {
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.6em 2.5em;
+
+  background-color: transparent;
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Button One */
+.btn--one {
+  color: var(--neon-1);
+  transition: all 300ms linear;
+}
+
+.btn--one:hover {
+  color: var(--black);
+  background-color: var(--neon-1);
+  box-shadow: 0 0 1em var(--neon-1), 0 0 2em var(--neon-1),
+    0 0 5em var(--neon-1);
+}
+
+/* Button Two */
+.btn--two {
+  color: var(--neon-2);
+  border: 2px solid var(--neon-2);
+  transition: color 300ms linear;
+
+  position: relative;
+  isolation: isolate;
+}
+
+.btn--two::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: -1;
+
+  background-color: var(--neon-2);
+  box-shadow: 0 0 1em 0 var(--neon-2), 0 0 2em 0.5em var(--neon-2);
+  transition: opacity 300ms linear;
+}
+
+.btn--two::before {
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  pointer-events: none;
+
+  background-color: var(--neon-2);
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.btn--two:hover {
+  color: var(--white);
+}
+
+.btn--two:hover::before,
+.btn--two:hover::after {
+  opacity: 1;
+}
+
+/* Button Three */
+.btn--three {
+  color: var(--neon-3);
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 300ms linear;
+}
+
+.btn--three:hover {
+  background-color: var(--neon-3);
+  color: var(--white);
+  box-shadow: 0 0 1em var(--neon-3), 0 0 2em var(--neon-3),
+    0 0 5em var(--neon-3);
+  transition-delay: 1000ms;
+}
+
+.btn--three > span {
+  position: absolute;
+  display: block;
+  color: var(--neon-3);
+}
+
+.btn--three > span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, transparent, currentColor);
+}
+
+.btn--three:hover > span:nth-child(1) {
+  left: 100%;
+  transition: 1000ms;
+}
+
+.btn--three > span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to left, transparent, currentColor);
+}
+
+.btn--three:hover > span:nth-child(3) {
+  right: 100%;
+  transition: 1000ms;
+  transition-delay: 500ms;
+}
+
+.btn--three > span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent, currentColor);
+}
+
+.btn--three:hover > span:nth-child(2) {
+  top: 100%;
+  transition: 1000ms;
+  transition-delay: 250ms;
+}
+
+.btn--three > span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background-image: linear-gradient(to top, transparent, currentColor);
+}
+
+.btn--three:hover > span:nth-child(4) {
+  bottom: 100%;
+  transition: 1000ms;
+  transition-delay: 750ms;
+}
